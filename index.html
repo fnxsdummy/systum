@@ -1,18 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Drag Papers ❤️</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Short+Stack&amp;family=Homemade+Apple&amp;display=swap'><link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- A pen by Developer Rahul  -->
+<div class="paper heart">
+
+</div>
+
+  
+<div class="paper image">
+  <p> and I fallen in</p>
+    <p>Love with You 😍 </p>
+   <img src="r4.jpg" />
+</div>
+
+<div class="paper image">
+  <p</p>
+  <img src="r2.jpg" />
+</div>
+
+<div class="paper image">
+  <p>How can be </p>
+   <p> someone so cute ❤️ </p>
+
+  <img src="r3.jpg" />
+</div>
 
 
-<!DOCTYPE>
-<html>
-   <head>
-      <charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap" rel="stylesheet">
-        <title>FENIX</title>
 
+<div class="paper red">
+<p class="p1"> and My Favorite</p>
+<p class="p2">Person 😍</p>
+</div>
+
+<div class="paper">
+<p class="p1">You are Cute </p>
+  <p class="p1">Amazing <span style="color: red !important;">❤️</span></p>
+</div>
+
+<div class="paper">
+<p class="p1">Drag the papers to move!</p>
+</div>
+<div id="refresh" onclick="ref()">Refresh</div>
+<div id="fenix" onclick="go1()">
+  <img id="fenix-dp" src="fenix.jpg" alt="fenix.jpg">
+  FENIX
+</div>
+<!-- partial -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+
+@keyframes fnx {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+body {
+  height: 100vh;
+  width:100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("back.gif");
+  background-position: center center;
+}
+
+.paper {
+  color: pink;
+  border: 1.8px double #A5FFEA;
+  background-image: url("bk2.gif");
+  background-position: center;
+  padding: 20px 40px;
+  border-radius: 3px;
+/*  min-width: 800px; */
+  
+  transform: rotateZ(-5deg);
+  box-shadow: 1px 15px 20px 0px rgba(0,0,0,0.5);
+  
+  position: absolute;
+}
+
+.paper.heart {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.paper.image {
+  padding: 10px;
+}
+.paper.image p {
+  font-size: 20px;
+}
+
+img {
+  max-height: 190px;
+  border-radius: 6%;
+  border: 1px solid white;
+  width: 100%;
+  user-select: none;
+}
+
+.paper.heart::after {
+  content: "";
+  background-image: url('https://cdn.pixabay.com/photo/2016/03/31/19/25/cartoon-1294994__340.png');
+  width: 100px;
+  height: 100px;
+  background-size: 100px;
+  position: absolute;
+  top: 24px;
+  left: 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+p {
+  font-family: 'Zeyada';
+  font-size: 30px;
+  text-shadow: 1px 1px 1px deeppink;
+  color: white;
+  opacity: 0.85;
+  font-weight: bold;
+  user-select: none;
+  
+  // filter: drop-shadow(2px 1.5px 1px rgba(0,0,105,0.9));
+}
+#refresh {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  padding: 3px;
+  z-index: 10;
+  background-color: lightskyblue;
+  font-family: cursive;
+  color: black;
+  bottom: 20px;
+  right: 20px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  
+}
+#refresh:hover {
+  border-right: 2px solid lightseagreen;
+  border-left: 2px solid lightseagreen;
+  background-color: deeppink;
+  color: white;
+  animation: fnx 0.5s linear normal;
+}
+#fenix {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: darkcyan;
+  color: white;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  border: 2px double cyan;
+  padding: 2px;
+  z-index: 10;
+  border-radius: 4px;
+  font-family: monospace;
+  text-shadow: 0.6px 0.6px 1px black;
+}
+#fenix-dp {
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  border:0.2px solid black;
+}
+</style>
+<script>
+  function go1() {
+    let aa = document.getElementById("refresh");
+    window.location ="https://fenixsdummy.com/"
+  }
+  function ref() {
+    window.location="https://www.systum"
+  }
+</script>
+   <script>
+      let highestZ = 1;
+
+class Paper {
+  holdingPaper = false;
+  touchStartX = 0;
+  touchStartY = 0;
+  touchMoveX = 0;
+  touchMoveY = 0;
+  touchEndX = 0;
+  touchEndY = 0;
+  prevTouchX = 0;
+  prevTouchY = 0;
+  velX = 0;
+  velY = 0;
+  rotation = Math.random() * 30 - 15;
+  currentPaperX = 0;
+  currentPaperY = 0;
+  rotating = false;
+
+  init(paper) {
+    paper.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      if(!this.rotating) {
+        this.touchMoveX = e.touches[0].clientX;
+        this.touchMoveY = e.touches[0].clientY;
+        
+        this.velX = this.touchMoveX - this.prevTouchX;
+        this.velY = this.touchMoveY - this.prevTouchY;
+      }
+        
+      const dirX = e.touches[0].clientX - this.touchStartX;
+      const dirY = e.touches[0].clientY - this.touchStartY;
+      const dirLength = Math.sqrt(dirX*dirX+dirY*dirY);
+      const dirNormalizedX = dirX / dirLength;
+      const dirNormalizedY = dirY / dirLength;
+
+      const angle = Math.atan2(dirNormalizedY, dirNormalizedX);
+      let degrees = 180 * angle / Math.PI;
+      degrees = (360 + Math.round(degrees)) % 360;
+      if(this.rotating) {
+        this.rotation = degrees;
+      }
+
+      if(this.holdingPaper) {
+        if(!this.rotating) {
+          this.currentPaperX += this.velX;
+          this.currentPaperY += this.velY;
+        }
+        this.prevTouchX = this.touchMoveX;
+        this.prevTouchY = this.touchMoveY;
+
+        paper.style.transform = `translateX(${this.currentPaperX}px) translateY(${this.currentPaperY}px) rotateZ(${this.rotation}deg)`;
+      }
+    })
+
+    paper.addEventListener('touchstart', (e) => {
+      if(this.holdingPaper) return; 
+      this.holdingPaper = true;
+      
+      paper.style.zIndex = highestZ;
+      highestZ += 1;
+      
+      this.touchStartX = e.touches[0].clientX;
+      this.touchStartY = e.touches[0].clientY;
+      this.prevTouchX = this.touchStartX;
+      this.prevTouchY = this.touchStartY;
+    });
+    paper.addEventListener('touchend', () => {
+      this.holdingPaper = false;
+      this.rotating = false;
+    });
+
+    // For two-finger rotation on touch screens
+    paper.addEventListener('gesturestart', (e) => {
+      e.preventDefault();
+      this.rotating = true;
+    });
+    paper.addEventListener('gestureend', () => {
+      this.rotating = false;
+    });
+  }
+}
+
+const papers = Array.from(document.querySelectorAll('.paper'));
+
+papers.forEach(paper => {
+  const p = new Paper();
+  p.init(paper);
+});
+      
+   </script>
+
+</body>
+</html>
